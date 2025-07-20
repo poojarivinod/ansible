@@ -1,7 +1,7 @@
 - name: variables
   hosts: local
   connection: local
-  vars_files: #ansible variable
+  vars_files: #ansible variable  files
   - common.yaml
   tasks:
   - name: print the variables
