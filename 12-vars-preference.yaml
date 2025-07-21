@@ -3,10 +3,10 @@
   connection: local
   vars: # play level variables
     GREET: "PLAY"
-  vars_prompt:
-  - name: GREET
-    prompt: Enter the value
-    private: false
+  # vars_prompt:
+  # - name: GREET
+  #   prompt: Enter the value
+  #   private: false
   tasks:
   - name: print the variables
     # vars: # task level variables
