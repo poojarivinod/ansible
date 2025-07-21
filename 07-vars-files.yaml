@@ -1,4 +1,4 @@
-- name: variables from files
+- name: variables from files # variables from files
   hosts: local
   connection: local
   vars_files: #ansible variable  files
