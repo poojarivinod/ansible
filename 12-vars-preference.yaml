@@ -12,4 +12,4 @@
     vars: # task level variables
       GREET: "TASK"
     ansible.builtin.debug:
-      msg: "Hello from {{ GRRET }}"
+      msg: "Hello from {{ GREET }}"
