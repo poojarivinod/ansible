@@ -24,8 +24,8 @@
   - name: convert list into map/dictionaries
     vars:
       course:
-        {'key': 'Name', 'value': 'ansible'}
-        {'key': 'Duration', 'value': '120hrs'}
-        {'key': 'Trainer', 'value': 'Sivakumar'}
+      - {'key': 'Name', 'value': 'ansible'}
+      - {'key': 'Duration', 'value': '120hrs'}
+      - {'key': 'Trainer', 'value': 'Sivakumar'}
     ansible.builtin.debug:
       msg: "Course info: {{ course | items2dict }}" # items2dict is the reserved word to convert list into map/dictionaries.
