@@ -1,4 +1,4 @@
-- name: filters
+- name: filters # search as ansible function
   hosts: local
   connection: local
   tasks:
@@ -10,4 +10,13 @@
     vars:
       fruits: " apple, banana, papaya " #string
     ansible.builtin.debug:
-      msg: " Fruits are {{ fruits | split (',')}}"     
+      msg: " Fruits are {{ fruits | split (',')}}" # split is the reserved word to convert string into list.  In output [] indicates the list.     
+
+  - name: convert map/dictionaries into list
+    vars:
+      course:
+        Name: ansible
+        Duration: 120hrs 
+        Trainer: Sivakumar
+    ansible.builtin.debug:
+      msg: "Course info: {{ course | dict2items }}"
