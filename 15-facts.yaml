@@ -3,4 +3,4 @@
   tasks:
   - name: print the facts
     ansible.builtin.debug:
-      msg: "{{ ansible_facts }}"
+      msg: "{{ ansible_facts }}" # ansible_facts is a reserved keyword of ansible to get complete information of nodes
