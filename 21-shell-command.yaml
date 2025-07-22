@@ -7,9 +7,9 @@
     ansible.builtin.shell: ls -ltr > /tmp/output.txt
 
   - name: execute ls command in command module
-    # ansible.builtin.command: ls -ltr
-    ansible.builtin.command: lssss -ltsssr
-    register: command_result
+    ansible.builtin.command: ls -ltr
+    #ansible.builtin.command: lssss -ltsssr
+    register: command_result # search as ansible register and print output. "register" keyword is used to store the output of the command
 
   - name: print the output
     ansible.builtin.debug: 
