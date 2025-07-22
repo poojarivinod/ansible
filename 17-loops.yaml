@@ -4,7 +4,7 @@
   tasks:
   - name: print names
     ansible.builtin.debug:
-      msg: "Hello {{ item }}" # item is a reserved word for to get list of things
+      msg: "Hello {{ item }}" # item is a reserved word in ansible for to get list of things
     loop:
     - vinod 
     - suda
