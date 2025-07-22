@@ -29,3 +29,15 @@
       - {'key': 'Trainer', 'value': 'Sivakumar'}
     ansible.builtin.debug:
       msg: "Course info: {{ course | items2dict }}" # items2dict is the reserved word to convert list into map/dictionaries.
+
+  - name: convert upper to lower
+    vars:
+      name: VINOD POOJARI
+    ansible.builtin.debug:
+      msg: "Hello {{ name | lower }}"
+
+  - name: convert lower to upper
+    vars:
+      name: vinod poojari 
+    ansible.builtin.debug:
+      msg: "Hello {{ name | upper }}"    
