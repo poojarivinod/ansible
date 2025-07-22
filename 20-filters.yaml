@@ -49,10 +49,14 @@
       msg: Minimum number is {{ number | min }} , Maximum number is {{ number | max }} # "min" finds the lowest number among the given numbers, "max" finds the largest number among the given number.
 
   - name: check ip address valid or not
-    vars:
-      ip:
-      - 120:24:44:255
-      - 255:255:255:255
-      - 256:256:256:256
+    # vars:
+    #   ip:
+    #   - 120:24:44:255
+    #   - 255:255:255:255
+    #   - 256:256:256:256
     ansible.builtin.debug:
-      msg: "{{ ip | ansible.utils.ipaddr }}"    
+      msg: "{{ item | ansible.utils.ipaddr }}"
+    loop:
+       - 120:24:44:255
+       - 255:255:255:255
+       - 256:256:256:256
