@@ -34,10 +34,16 @@
     vars:
       name: VINOD POOJARI
     ansible.builtin.debug:
-      msg: "Hello {{ name | lower }}"
+      msg: "Hello {{ name | lower }}" # "lower" is a function which convert upper case to lower case
 
   - name: convert lower to upper
     vars:
       name: vinod poojari 
     ansible.builtin.debug:
-      msg: "Hello {{ name | upper }}"    
+      msg: "Hello {{ name | upper }}" # "upper" is a function which convert lower case to upper case  
+  
+  - name: print min and max
+    vars:
+      number: [ 1, 55, 5855, 88, 999999, 10]
+    ansible.builtin.debug:
+      msg: Minimum number is {{ number | min }} , Maximum number is {{ number | max }}
