@@ -42,10 +42,24 @@
     amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
-      record: "{{ item.item}}.{{zone }}"
+      record: "{{ item.item }}.{{zone }}"
       type: A
       ttl: 1
       value: "{{ item.instances[0].private_ip_address }}"
       wait: true
       overwrite: true # already created the records and overwrite with this new record
     loop: "{{ ec2_info.results }}"
+
+  
+  - name: create private ip for frontend
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].public_ip_address }}"
+      wait: true
+      overwrite: true # already created the records and overwrite with this new record
+    loop: "{{ ec2_info.results }}"
+    when: item.item == "frontend"
