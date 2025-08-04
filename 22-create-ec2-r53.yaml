@@ -51,8 +51,8 @@
     loop: "{{ ec2_info.results }}"
 
   
-  - name: create private ip for frontend
-    amazon.aws.route53:
+  - name: create public ip for frontend
+    amazon.aws.route53: #ansible aws route53
       state: present
       zone: "{{ zone }}"
       record: "{{ zone }}"
