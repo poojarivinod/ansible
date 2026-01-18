@@ -1,5 +1,5 @@
 - name: PING
-  hosts: web
+  hosts: web 
   tasks:
   - name: ping the server
-    ansible.builtin.ping:
+    ansible.builtin.ping: # Ansible, please check if this server is reachable and ready
