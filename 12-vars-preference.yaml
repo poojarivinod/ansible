@@ -5,10 +5,10 @@
     GREET: "PLAY"
   vars_files: # variables from files
   - common.yaml  
-  vars_prompt: # variables from prompt
-  - name: GREET
-    prompt: Enter the value
-    private: false
+  # vars_prompt: # variables from prompt
+  # - name: GREET
+  #   prompt: Enter the value
+  #   private: false
   tasks:
   - name: print the variables
     # vars: # task level variables
